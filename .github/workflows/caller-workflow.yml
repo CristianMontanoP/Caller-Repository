@@ -4,9 +4,13 @@ on:
 
 jobs:
   call-workflow:
-    uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main
+    runs-on: ubuntu-latest
     environment: Staging
-    with:
-      ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
-    secrets:
-      ENV_SECRET: ${{ secrets.ENV_SECRET }}
+    steps:
+      - name: Call reusable workflow
+        uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main 
+        with:
+          ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
+        secrets:
+          ENV_SECRET: ${{ secrets.ENV_SECRET }}
+    
