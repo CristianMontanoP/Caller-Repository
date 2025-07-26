@@ -6,7 +6,6 @@ on:
 jobs:
   call-reusable:
     uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main
-    environment: Staging
     with:
       ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
     secrets:
