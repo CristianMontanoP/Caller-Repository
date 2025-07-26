@@ -1,17 +1,13 @@
+name: Call Reusable Workflow
+
 on:
   workflow_dispatch:
-env:
-  # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
   call-reusable:
-    runs-on: ubuntu-latest
-    environment: staging
-    steps:
-      - name: Call reusable workflow
-        uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main
-        with:
-          SOME_INPUT: ${{ vars.MY_VAR }}
-        secrets:
-          SOME_SECRET: ${{ secrets.MY_SECRET }}
+    uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main
+    environment: Staging
+    with:
+      ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
+    secrets:
+      ENV_SECRET: ${{ secrets.ENV_SECRET }}
