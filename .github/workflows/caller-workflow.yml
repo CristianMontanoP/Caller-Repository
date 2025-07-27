@@ -6,8 +6,6 @@ on:
 jobs:
   call-reusable:
     uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main
-    # with:
-    #   ENV_VARIABLE: ${{ vars.ENV_VARIABLE }}
-    # secrets:
-    #   ENV_SECRET: ${{ secrets.ENV_SECRET }}
+    with:
+      ENVIRONMENT: Staging
     secrets: inherit
