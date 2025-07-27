@@ -1,0 +1,11 @@
+name: Call Reusable Workflow [Production]
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-reusable:
+    uses: CristianMontanoP/Reusable-Repository/.github/workflows/reusable-workflow.yml@main
+    with:
+      ENVIRONMENT: Production
+    secrets: inherit
